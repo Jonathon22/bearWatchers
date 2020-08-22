@@ -1,8 +1,7 @@
 import { bearForm, getValues } from './bearForm.js'
 
-const init = () => {
+const init = ()=> {
  bearForm();
  getValues();
 };
-
-init ();
+init();

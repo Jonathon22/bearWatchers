@@ -1,0 +1,14 @@
+.jumbotron-fluid {
+  background-color: #997255;
+}
+
+.display-4 {
+text-align: center;
+color: #F5F6F6;
+}
+
+#submit {
+  background-color: #997255;
+  color: #F5F6F6;
+  justify-content: center;
+}
