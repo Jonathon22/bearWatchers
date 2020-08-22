@@ -1,37 +1,33 @@
-
+import { buildBearCard } from './river.js'
 
 const bearForm = () => {
-  $("#bearForm").append(`<form>
-    <div class="form-group">
-      <label for="bear name">Bear Name</label>
-      <input class="form-control" id="bearInputName" aria-describedby="emailHelp">
-    </div>
-    <div class="form-group">
-      <label for="ImageURl">Image URL</label>
-      <input class="form-control" id="bearInputImage">
-    </div>
-    <button id="submit" type="submit" class="btn btn-primary">Submit</button>
-  </form>`) 
+  $("#bearForm").append(`<input id="bearNameInput" class="form-control form-control-lg" type="text" placeholder="Input Bear Name">
+  <input id="bearImageInput" class="form-control form-control-lg" type="text" placeholder="Input Bear Image URL">
+  <button type="button" id="submit" class="btn btn-primary btn-lg">Submit</button>
+`) 
+
+
 
 }
 const bears = [];
 
 
 const clearForm = () => {
-  $('#bearInputName').val('');
-    $('#bearInputImage').val('');
+  $('#bearNameInput').val('');
+    $('#bearImageInput').val('');
 }
 const getValues = () => {
   $("#submit").click( () => {
     let bear = {};
-    bear.bearName = $('#bearInputName').val();
-    bear.bearImage = $('#bearInputImage').val();
+    bear.bearName = $('#bearNameInput').val();
+    bear.bearImage = $('#bearImageInput').val();
 
     bears.push(bear);
-      clearForm();
-      console.log(bears);
-  });
-};
+    buildBearCard(bears);
+    clearForm();
+      
+});
+}
 
 
 export { bearForm, getValues }
